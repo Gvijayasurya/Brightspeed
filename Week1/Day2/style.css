@@ -1,0 +1,31 @@
+*{
+    margin:0px;
+    padding: 0px;
+}
+header h1{
+    font-size: 28px;
+    font-family: sans-serif;
+    background-color:orangered;
+    color: white;
+    text-align: center;
+}
+.body{
+    margin-top: 25px;
+    margin-left: 40%;
+}
+.body h3{
+    font-size: 25px;
+}
+.body table{
+    border-collapse: collapse;
+    height: 80px;
+    width: 250px;
+    text-align: center;
+}
+.About p{
+    text-align: justify;
+}
+.About ul{
+    margin-left: 30px;
+    
+}
