@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Sign in</h1>
+    <form>
+        <label for="email">Email:</label>
+        <input type="email" placeholder="Enter email"><br><br>
+        <label for="password">password:</label>
+        <input type="password" required><br><br>
+        <span id="Mesg"></span>
+        <input type="button" value="submit" onclick="signinDetails()"><br><br><br>
+        <a href="./Register.html">If you don't have account register here</a>
+    </form>
+
+    <script>
+        let SD = document.querySelectorAll('input')
+        let signinDetails = ()=>{
+            let ue = SD[0].value
+            let ps = SD[1].value
+            console.log(ue,ps);
+            //event.preventDefault()
+            fetch("http://localhost:3000/Ruser")
+            .then(res => res.json())
+            .then(data=>{
+                let c = 0
+                for(let ele of data)
+                {
+                    if(ele.email===ue && ele.password===ps)
+                    {
+                        window.location.assign("Dashbord.html")
+                        console.log("login successfull");
+                        c = 1
+                        break;
+                    }
+                }
+                if(c===0)
+                {
+                    console.log("invalid credentials");
+
+                }
+            })
+            .catch(error=>console.log(error))
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <button onclick="demo()">click here to fetch</button>
+        <div id="info">
+            
+        </div>
+
+
+
+
+    <script>
+        let demo = ()=>{
+            let PersonData = new XMLHttpRequest()
+            PersonData.open('GET',"https://newsapi.org/v2/everything?q=chennai&apiKey=dfb1707d566f4303a44035678e264d3f",true)
+            PersonData.send();
+            PersonData.onreadystatechange=function(){
+                if(PersonData.readyState === 4 && PersonData.status===200)
+                {
+                    let res = PersonData.responseText
+                    let con = JSON.parse(res)
+                    //console.log(con.articles[0].source.name);
+                    let infoele = document.getElementById('info')
+                    infoele.innerHTML=''
+                    for(let ele in con.articles)
+                    {
+                        let h3ele = document.createElement('h3')
+                        h3ele.innerText=`${con.articles[ele].source.name}`
+                        infoele.append(h3ele)
+                    }
+                }
+
+            }
+            //console.log("working");
+        }
+    </script>
+
+</body>
+</html>
