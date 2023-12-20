@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .sty {
+            color: red;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body ng-app="app">
+    <div ng-controller="viewCtlr">
+        <h1 ng-click="Changestyle()" ng-class="{sty:status1}">Hi</h1>
+
+        <button ng-show="status2">Login</button> <button ng-hide="status2">sigin in</button><br><br>
+        <button ng-click="ChangeButton()">click me</button><br><br><br><br>
+        
+
+
+
+        <table border="2px" style="border-collapse: collapse; height: 200px; width: 250px;">
+            <tr>
+                <th>Name</th>
+                <th>Location</th>
+            </tr>
+            <tr ng-repeat="x in LocationData">
+                <td>{{x.name}}</td>
+                <td>{{x.location}}</td>
+            </tr>
+
+        </table><br><br><br>
+
+        <form>
+            <label for="firstname">Firstname: </label>
+            <input type="text" ng-model="fname"><br><br>
+            <label for="lastname">Lastname: </label>
+            <input type="text" ng-model="lname"><br><br>
+            <label for="email">Email: </label>
+            <input type="email" ng-model="email"><br><br>
+            <label for="password">Password: </label>
+            <input type="password" ng-model="password"><br><br>
+            <button type="submit" ng-click="formData()">submit</button>
+        </form><br><br><br>
+
+
+        <ul>
+            <li ng-click="DelEle($index)" ng-repeat="x in SampleArray">{{x}}</li>
+        </ul>
+
+    </div>
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.js"></script>
+
+    <script>
+        let app = angular.module("app", [])
+
+        app.controller("viewCtlr", ["$scope", function (s) {
+
+            //Task1
+            s.status1 = false
+            s.Changestyle = function () {
+                if (s.status1 == false) {
+                    s.status1 = true
+                }
+                else {
+                    s.status1 = false
+                }
+
+            }
+
+            //Task2
+            s.status2 = false
+            s.ChangeButton = function () {
+                if (s.status2 == false) {
+                    s.status2 = true
+                }
+                else {
+                    s.status2 = false
+                }
+
+            }
+
+            //Task3
+            s.LocationData = [{ name: "vijay", location: "Andhra" },
+            { name: "karthik", location: "Chennai" },
+            { name: "Mohith", location: "Noida" },
+            { name: "Deekshith", location: "Bengaluru" }]
+
+            //Task4
+            s.fname
+            s.lname
+            s.email
+            s.password
+            s.formData = function () {
+
+                let u = {
+                    "fname": s.fname,
+                    "lname": s.lname,
+                    "email": s.email,
+                    "password": s.password
+
+                }
+                console.log(u);
+            }
+
+            s.SampleArray=["Vijay","Durga","karthik","mugundhan"]
+            s.DelEle=function(index){
+                s.SampleArray.splice(index,1)
+            }
+            
+
+        }
+
+        ])
+
+    </script>
+</body>
+
+</html>

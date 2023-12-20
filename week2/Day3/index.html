@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body ng-app="app">
+    <div ng-controller="RegisterCtlr">
+
+        <!-- registration Form-->
+        <div ng-show="flage">
+
+            <form>
+                <label for="firstname">Firstname: </label>
+                <input type="text" ng-model="fname"><br><br>
+                <label for="lastname">Lastname: </label>
+                <input type="text" ng-model="lname"><br><br>
+                <label for="email">Email: </label>
+                <input type="email" ng-model="email"><br><br>
+                <label for="password">Password: </label>
+                <input type="password" ng-model="password"><br><br>
+                <button type="submit" ng-click="formData()">submit</button><br><br>
+            </form>
+
+        </div>
+        <!-- Sigin Form -->
+        <div>
+            <form ng-hide="flage">
+                <label for="Semail">Email: </label>
+                <input type="email" ng-model="Semail"><br><br>
+                <label for="Spassword">Password: </label>
+                <input type="password" ng-model="Spassword"><br><br>
+                <button type="submit" ng-click="SiginData()">submit</button><br><br>
+            </form>
+        </div> 
+
+        <button type="submit" ng-click="option()">{{value}}</button>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.js"></script>
+    <script>
+        let app = angular.module("app",[])
+
+        app.controller("RegisterCtlr",["$scope",function(s){
+            s.flage=true
+            s.value="Click to Signin"
+            s.option=function(){
+                if(s.flage==true)
+                {
+                    s.value="Click to Register"
+                    s.flage=false
+                }
+                else{
+                    s.value="Click to Signin"
+                    s.flage=true
+                }
+            }
+
+
+            s.UserArray=[]
+            s.fname
+            s.lname
+            s.email
+            s.password
+            s.formData = function () {
+                let u = {
+                    "fname": s.fname,
+                    "lname": s.lname,
+                    "email": s.email,
+                    "password": s.password
+
+                }
+                s.UserArray.push(u)
+                //console.log(s.UserArray);
+                console.log(u);
+            }
+
+            s.Semail
+            s.Spassword
+            s.SiginData=function(){
+                //console.log(s.UserArray);
+                for(let ele of s.UserArray)
+                {
+                    if(ele.email==s.Semail && ele.password==s.Spassword)
+                    {
+                        console.log("Login Successfull");
+                        break;
+                    }
+                    else{
+                        console.log("Invalid Credantials");
+                    }
+                }
+            }
+
+
+        }])
+
+
+    </script>
+    
+</body>
+</html>
