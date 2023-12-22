@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body ng-app="app">
+
+    <div ng-controller="FilterCltr">
+        <p>{{text}} <br>{{text | uppercase}}</p>
+        <ul>
+            <li ng-repeat="ele in arr | orderBy:'no' ">{{ele.no}}</li>
+        </ul>
+        <ul>
+            <li ng-repeat="ele in arr | orderBy:'no':true ">{{ele.no}}</li>
+        </ul>
+        <p>{{text1}} <br>{{text1 | lowercase}}</p>
+        <ul>
+            <li ng-repeat="D in dates | date:'27-11-2001' ">{{D.DOB}}</li>
+        </ul>
+
+        <h3>{{amount | currency}}</h3>
+        <h3>{{amount | currency:'INR'}}</h3>
+        <h3>{{amount | currency:'EUR'}}</h3>
+        <h3>{{amount | currency:'US'}}</h3>
+
+        <!-- <ul>
+            <li ng-repeat="ele in arr | orderBy:true">{{ele}}</li>
+        </ul> -->
+
+        <select name="Category" ng-model="val">
+            <option value="true">All</option>
+            <option value="cloths">cloths</option>
+            <option value="Accessories">Accessories</option>
+            <option value="Electronics">Electronics</option>
+            <option value="HomeAppliances">HomeAppliances</option>
+        </select>
+
+        <input type="text" ng-model="val">
+        <!-- <button ng-click="sortByVal('val')">click</button> -->
+        <table border="2px" style="border-collapse: collapse;">
+            <tr><th>Product Id</th><th>Product Name</th><th ng-click="sortByVal('Pprice')">Product Price</th><th>Category</th>
+            </tr>
+            <tr ng-repeat="item in productsData | orderBy: value | filter:{Pcat:val}">
+                <td>{{item.Pid}}</td>
+                <td>{{item.Pname}}</td>
+                <td>{{item.Pprice}}</td>
+                <td>{{item.Pcat}}</td>
+            </tr>
+
+        </table>
+
+    </div>
+
+    <!-- <div ng-controller="store">
+
+
+        
+
+    </div> -->
+
+
+
+
+
+
+
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.js"></script>
+
+    <script>
+        let app = angular.module("app",[])
+        app.controller("FilterCltr",["$scope",function($scope){
+            $scope.arr=[{no:22},{no:3},{no:44},{no:10},{no:14},{no:2},{no:0},{no:9}]
+            $scope.text="hello there happy learning of filters"
+            $scope.text1 = "INKY PINKY"
+            $scope.dates=[{DOB:'12-01-2000'},{DOB:'10-02-2000'},{DOB:'1-11-2001'},{DOB:'27-11-2001'},{DOB:'10-02-2000'},{DOB:'10-02-2000'}]
+            $scope.amount=500
+
+
+            $scope.productsData = [{Pid:1,Pname:"shirt",Pprice:400,Pcat:"cloths"},
+            {Pid:2,Pname:"Pants",Pprice:600,Pcat:"cloths"},
+            {Pid:3,Pname:"Watch",Pprice:1000,Pcat:"Accessories"},
+            {Pid:4,Pname:"Shoes",Pprice:900,Pcat:"Accessories"},
+            {Pid:5,Pname:"mobile",Pprice:20000,Pcat:"Electronics"},
+            {Pid:6,Pname:"laptop",Pprice:50000,Pcat:"Electronics"},
+            {Pid:7,Pname:"Bottel",Pprice:100,Pcat:"HomeAppliances"},
+            {Pid:8,Pname:"Step stool",Pprice:1000,Pcat:"HomeAppliances"}
+        ]
+
+        $scope.sortByVal=function(p){
+            $scope.value=p
+        }
+        // $scope.sortByCat=function(){
+        //     let c = prompt("Enter Cateogery:")
+        //     $scope.value=c
+        // }
+
+
+        }])
+
+
+        // let store = angular.module("store",[])
+        // store.controller("StoreCltr",["$Scope",function($scope){
+            
+
+
+        // }])
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            height: 250px;
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <button onclick="data()">click</button>
+        <ul id="itemlist"></ul>
+        <div id="Galary">
+
+        </div>
+    </div>
+    
+
+
+
+    <script>
+        let data = ()=>{
+            fetch("https://fakestoreapi.com/products")
+            .then(res=>res.json())
+            .then(data=>{
+                for(let item of data){
+                    let itemSelector = document.getElementById('itemlist')
+                    itemSelector.insertAdjacentHTML("afterend",`<li>${item.category}</li>`)
+                    console.log(item.category);
+                }
+                for(let item of data){
+                    let imgSelector = document.getElementById('Galary')
+                    imgSelector.insertAdjacentHTML("afterend",`<img src=${item.image} >`)
+                }
+
+        })
+        }
+    </script>
+   
+</body>
+</html>
