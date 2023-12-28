@@ -1,0 +1,13 @@
+<div ng-controller="SigninCltr" ng-class="{Scontainer:true}">
+    <div ng-class="{Sform:true}">
+        <h1> signin </h1>
+        <form>
+            <label for="Email">Email: </label>
+            <input type="email" placeholder="Enter email" required ng-model="Semail"><br><br>
+            <label for="password">Password: </label>
+            <input type="password" required ng-model="Spass"><br><br>
+            <button ng-click="Sdata()">submit</button>
+        </form>
+        <p>Don't have account?<a href="#!register">Register</a></p>
+    </div>
+</div>

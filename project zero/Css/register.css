@@ -1,0 +1,46 @@
+.Rcontainer{
+    height: 100vh;
+    width: 100%;
+    background: url(../images/landing2\ img.jpg) no-repeat center/cover fixed;
+}
+
+.Rclass{
+    height: 400px;
+    width: 370px;
+    border: 0px solid red;
+    text-align: center;
+    background-color: rgba(245, 245, 245, 0.765);
+    margin: auto;
+}
+.Rclass p{
+    font-size: 32px;
+    color: rgb(255, 101, 45);
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+.Rclass form{
+    margin-top: 30px;
+    text-align: right;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.Rclass button{
+    border-radius: 10px;
+    border: none;
+    background-color: rgb(255, 101, 45);
+    color: white;
+
+    height: 35px;
+    width: 90px;
+    margin-right: 160px;
+}
+.Rclass label{
+    margin-right: 20px;
+
+}
+.Rclass input{
+    margin-right: 70px;
+    align-items:flex-start;
+}
+.Rwarn{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: red;
+}

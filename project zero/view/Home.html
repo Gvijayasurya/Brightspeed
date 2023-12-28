@@ -1,0 +1,30 @@
+<div ng-controller="HomeCltr">
+    <div ng-class="{navbar:true}">
+        <ul type="none">
+            <li><a href="" ng-click="showData()">All</a></li>
+            <li><a href="" ng-click="showfilteredItem('electronics')">Electronics</a></li>
+            <li><a href="" ng-click='showfilteredItem("men")'>clothes</a></li>
+            <li><a href="" ng-click="showfilteredItem('jewelery')">Jewelery</a></li>
+            <li><a href="" ng-click="SortItem(false)">sort by Lowest price</a></li>
+            <li><a href="" ng-click="SortItem(true)">sort by Highest price</a></li>
+        </ul>
+        <input type="text" placeholder="Search by category" ng-model="val">
+        <button ng-click="clearData()">Logout</button>
+    </div>
+    <p ng-class="{wmesg:true}">Welcome to SuperMart {{Uname}}</p><br>
+    <div ng-class="{Smaincontainer:true}">
+        <div ng-repeat="x in Itemsarr | orderBy: 'price':value | filter:{category: val}"
+            ng-class="{ItemContainer:true}">
+            <img src={{x.image}} alt="Ekart img">
+            <ul type="none">
+                <li>
+                    <p>{{x.title}}</p>
+                </li>
+                <li>Price: ${{x.price}}</li>
+                <li>rating: {{x.rating.rate}}⭐ Likes:{{x.rating.count}}❤️</li>
+            </ul>
+        </div>
+    </div>
+
+
+</div>

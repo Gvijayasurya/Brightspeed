@@ -1,0 +1,75 @@
+.wmesg{
+    color: rgb(116, 116, 250);
+    font-size: 28px;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: whitesmoke;
+}
+.navbar{
+    height: 70px;
+    width: 100%;
+    background-color:rgb(116, 116, 250);
+}
+.navbar ul{
+    height: 40px;
+    width: 680px;
+    margin-left: 40px;
+    display: flex;
+    /* background-color: red; */
+    color: white;
+    align-items: center;
+    justify-content:space-evenly;
+}
+.navbar ul a{
+    text-decoration: none;
+    color: white;
+    position: relative;
+
+}
+.navbar ul a:hover{
+    /* color: rgb(32, 32, 240); */
+    color: white;
+    /* background-color: white; */
+}
+.navbar ul a::after{
+    content: '';
+    width: 0%;
+    height: 2px;
+    background-color: rgb(66, 66, 237);
+    background-color: white;
+    position: absolute;
+    left: 0px;
+    bottom: -1px;
+    transition: 0.5s;
+}
+.navbar ul a:hover::after{
+    width: 90%;
+}
+.navbar button{
+    border-radius: 5px;
+    border: none;
+    margin-right: 40px;
+    color:rgb(116, 116, 250);
+}
+.navbar button:hover{
+    color: white;
+    background-color: rgb(66, 66, 237);
+}
+img{
+    height: 250px;
+    width: 250px;
+}
+.ItemContainer{
+    height: 400px;
+    width: 300px;
+    border: 0px solid red;
+    border-radius: 10px;
+}
+.Smaincontainer{
+    height: 100vh;
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    justify-content: space-evenly;
+    gap:20px
+}

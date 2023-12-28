@@ -1,0 +1,21 @@
+<div ng-controller="RegisterCltr" ng-class="{Rcontainer:true}">
+    <div ng-class="{Rclass:true}">
+        <p>Registration Form</p>
+        <form>
+            <label for="Firstname">Firstname: </label>
+            <input type="text" placeholder="Firstname" ng-model="fname"><br><br>
+            <label for="Lastname">Lastname: </label>
+            <input type="text" placeholder="Lastname" ng-model="lname"><br><br>
+            <label for="MobileNo">Mobile.No: </label>
+            <input type="text" placeholder="Mobile number" ng-model="mob"><br><br>
+            <label for="email">Email: </label>
+            <input type="email" placeholder="Enter Email" ng-model="email"><br><br>
+            <label for="pass">Password: </label>
+            <input type="password" ng-model="pass"><br><br>
+            <button ng-click="Rdata()">submit</button>
+        </form>
+        <br>
+        <div>already have account ? <a href="#!signin">signin</a></div>
+    </div>
+
+</div>

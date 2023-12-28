@@ -1,0 +1,15 @@
+.LandingMsg{
+    /* margin-top: 50px; */
+    border: 0px solid red;
+    height: 100px;
+    width: 500px;
+    border-radius: 10px;
+    background-color: rgba(245, 245, 245, 0.765);
+    margin: auto;
+}
+.Bgimage{
+    /* margin-top: 40px; */
+    height: 100vh;
+    width: 100%;
+    background: url(../images/landing2\ img.jpg) no-repeat center/cover fixed;
+}

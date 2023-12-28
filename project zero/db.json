@@ -1,0 +1,51 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "Users": [
+    {
+      "id": 1,
+      "fname": "first name",
+      "lname": "last name",
+      "mob": "9877654432",
+      "email": "user@gmail.com",
+      "pass": "12341"
+    },
+    {
+      "fname": "Vijay",
+      "lname": "Surya",
+      "mob": "9063055729",
+      "email": "vijay@gmail.com",
+      "pass": "1234",
+      "id": 2
+    },
+    {
+      "fname": "Deepak",
+      "lname": "k",
+      "mob": "9876543211",
+      "email": "D@gmail.com",
+      "pass": "asdf",
+      "id": 4
+    },
+    {
+      "fname": "Durga",
+      "lname": "k",
+      "mob": "9876543212",
+      "email": "durga@gmail.com",
+      "pass": "qwerty",
+      "id": 5
+    },
+    {
+      "fname": "vishnu",
+      "lname": "v",
+      "mob": "9876543323",
+      "email": "vishnu@gmail.com",
+      "pass": "7890",
+      "id": 6
+    }
+  ]
+}
